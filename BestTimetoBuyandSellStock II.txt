@@ -1,0 +1,18 @@
+//typical
+
+class Solution {                                
+
+    const int INF =1e9+5;
+public:
+    int maxProfit(vector<int>& prices) {
+        int best=0;
+        int ans = -INF;
+        for(int x:prices){
+            best = max(best , ans-x);
+            ans = max(ans , best+x);
+            
+        }
+        return ans ;
+        
+    }
+};
